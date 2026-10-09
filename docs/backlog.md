@@ -9,7 +9,7 @@ Everything that could go into Codebase City, ordered from most to least importan
 
 | ID | Epic |
 |---|---|
-| E1 | Foundation: repo, environments, test setup |
+| E1 | Foundation: repo, environments |
 | E2 | Repository analysis: fetch, scan, read history |
 | E3 | Storage: SQLite database |
 | E4 | Layout: turn the folder tree into building positions |
@@ -26,10 +26,10 @@ Everything that could go into Codebase City, ordered from most to least importan
    - The repo contains the README, `CLAUDE.md`, the agents, and `.gitignore`
    - The backend virtual environment is set up and `pytest` runs
    - The frontend Vite project runs in the browser
-   - A test helper can create a temporary Git repo with known files and commits
 
 2. **[E2]** As a user, I can point the analyzer at a repository on my computer and get every tracked file with its line count.
    - Output exactly matches the fixture repo's known files and line counts
+   - A test helper creates a temporary Git repo with known files and commits (with a test proving its files, line counts, and commits)
    - Ignored and untracked files are left out
    - Output is saved as a JSON file
    - *A local path for now; GitHub URLs come with the repo fetcher story.*
