@@ -1,22 +1,12 @@
 # Codebase City
 
-> Point it at a codebase. Walk through it as a 3D city.
-
-<br>
-
 Codebase City turns a software repository into an interactive 3D city, so you can explore how a project is built instead of reading through it file by file.
 
-**Who it's for:** Students and amateur developers who want to see what their own projects look like.
-
-> **Why:** I'm in this group myself, and student-sized projects keep the scope realistic.
+**Who it's for:** Students and amateur developers who want to see what their projects would look like if they were cities.
 
 **Status:** Planning and setup.
 
-<br>
-
 ---
-
-<br>
 
 ## Table of Contents
 
@@ -30,21 +20,13 @@ Codebase City turns a software repository into an interactive 3D city, so you ca
 8. [Development Methodology](#development-methodology)
 9. [Team](#team)
 
-<br>
-
 ---
-
-<br>
 
 ## Purpose
 
 Build a polished, finished tool that turns codebases into explorable 3D cities, and develop real software engineering skills along the way.
 
-<br>
-
 ---
-
-<br>
 
 ## Learning Goals
 
@@ -56,11 +38,7 @@ Build a polished, finished tool that turns codebases into explorable 3D cities, 
 - Testing
 - Agile development with Scrum
 
-<br>
-
 ---
-
-<br>
 
 ## What It Does
 
@@ -68,14 +46,10 @@ Build a polished, finished tool that turns codebases into explorable 3D cities, 
 
 *To be designed.*
 
-<br>
-
 ### Core features
 
 - Paste a GitHub repository URL and analyze it on your own computer
 - Explore the city in 3D: orbit, zoom, and hover for details
-
-<br>
 
 ### Later
 
@@ -85,17 +59,11 @@ Build a polished, finished tool that turns codebases into explorable 3D cities, 
 - Hosted demo with sample repositories
 - Analyze repositories online without installing anything (stretch goal)
 
-<br>
-
 ---
-
-<br>
 
 ## Quality Attributes
 
 In priority order:
-
-<br>
 
 **1. Correctness:** the city matches the codebase.
 
@@ -109,11 +77,7 @@ In priority order:
 
 > **Why:** The visuals are the reason to use this instead of a file tree.
 
-<br>
-
 ---
-
-<br>
 
 ## Tech Stack
 
@@ -125,14 +89,11 @@ In priority order:
 | Database | SQLite locally, PostgreSQL hosted | SQLite needs no server; PostgreSQL handles many users |
 | Testing | pytest and Vitest | The standard tools for Python and TypeScript |
 | Version control | Git + GitHub | Industry standard, and my portfolio is already there |
+| AI agents | Claude Code subagents | Agents live in the repo as files, and each one is limited to the tools it needs |
 | Git analysis | *To be decided* | |
 | Continuous integration | *To be decided* | |
 
-<br>
-
 ---
-
-<br>
 
 ## Architecture
 
@@ -143,8 +104,6 @@ In priority order:
 3. **Hosted analysis (stretch):** analyze any public repository online.
 
 > **Why:** Running locally keeps code private and avoids hosting costs and security risks. The demo still lets anyone try it instantly.
-
-<br>
 
 ### How it works
 
@@ -159,8 +118,6 @@ PHASE 2 — VIEW (every visit)                                                  
   City page ◀── city data (JSON) ── API ◀─────────────────────────────────────┘
 ```
 
-<br>
-
 ### Components
 
 | Component | Job |
@@ -174,8 +131,6 @@ PHASE 2 — VIEW (every visit)                                                  
 | **Layout engine** | Works out where each building goes and how big it is |
 | **Database** | Stores each analysis and its status |
 | **City page** | Draws the city and handles interaction |
-
-<br>
 
 ### Contracts
 
@@ -205,8 +160,6 @@ GET /api/analyses/a1b2/city
 }
 ```
 
-<br>
-
 ### Design decisions
 
 | Decision | Choice | Why |
@@ -223,11 +176,7 @@ GET /api/analyses/a1b2/city
 | Clone storage | Cached and reused | Makes re-analysis fast |
 | Security | Local connections and github.com URLs only | Other devices on the network can't reach the server |
 
-<br>
-
 ---
-
-<br>
 
 ## Testing
 
@@ -240,19 +189,13 @@ GET /api/analyses/a1b2/city
 
 *Specific repositories to be selected.*
 
-<br>
-
 ---
-
-<br>
 
 ## Development Methodology
 
 This project uses **Scrum**: work happens in short, fixed-length **sprints**, and AI agents act as Scrum Master and Reviewer / Tester (see [Team](#team)).
 
 > **Why:** Every sprint has to end with working software, which keeps the project moving instead of stuck in planning.
-
-<br>
 
 ### How work is organized
 
@@ -269,15 +212,11 @@ Product Goal → Epics → User Stories → Tasks
 
 Epics and user stories aren't part of the official Scrum Guide; they're common add-ons.
 
-<br>
-
 ### Sprints
 
-- Each sprint has a fixed length (*to be decided*).
+- Each sprint lasts one week.
 - Each sprint has one goal, set at the start.
 - Each sprint ends with something that works.
-
-<br>
 
 ### Definition of Done
 
@@ -294,22 +233,18 @@ Every user story is checked against this list. It's Done only when every item is
 | **Correctness** | All existing tests still pass *(automated once CI is set up)* | New work can't break old work |
 | **Performance** | Stays smooth on the large test repository *(threshold to be set)* | A slow city ruins the experience |
 | **Visual polish** | *To be defined* | Needs a clear yes-or-no check first |
-| **Reviewed** | The reviewer agent has checked it; issues are fixed or logged *(process to be researched)* | A second pair of eyes |
-| **Understood** | I can explain every line *(how to check this is to be researched)* | Code I can't explain is code I didn't learn from |
-| **Integrated** | Committed, pushed, and merged into main *(branch workflow to be decided)* | Work only on my laptop doesn't count |
+| **Reviewed** | The reviewer agent has checked it; issues are fixed or logged | A second pair of eyes |
+| **Understood** | The reviewer's explain check is graded Correct | Code I can't explain is code I didn't learn from |
+| **Integrated** | Committed and pushed to main *(branch workflow to be decided)* | Work only on my laptop doesn't count |
 | **Documented** | README updated if behavior changed | Keeps the docs accurate |
-
-<br>
 
 ### Workflow
 
-*To be researched.*
-
-<br>
+- **Product Backlog:** `docs/backlog.md`
+- **Sprint files:** `docs/sprints/sprint-NN.md`
+- *Branch workflow to be decided.*
 
 ---
-
-<br>
 
 ## Team
 
@@ -322,23 +257,17 @@ Every user story is checked against this list. It's Done only when every item is
 
 > **Why:** The agents add structure and a review step I'd otherwise skip. I write the code because that's how I learn, and I stay Product Owner because AI tends to agree with whoever it's talking to.
 
-<br>
-
-### Scrum Master agent
+### Scrum Master agent (`scrum-master`)
 
 - Runs sprint planning and keeps each sprint goal focused
 - Checks in during the sprint and flags blockers
 - Flags scope creep
 - Runs the sprint review and retrospective
 
-<br>
-
-### Reviewer / Tester agent
+### Reviewer / Tester agent (`reviewer`)
 
 - Reviews finished work before it counts as Done
 - Suggests test cases and edge cases
 - Explains errors and failing tests
 
-<br>
-
-*How the agents work is to be researched.*
+The agents are defined in `.claude/agents/scrum-master.md` and `.claude/agents/reviewer.md`. Project-wide rules for Claude live in `CLAUDE.md`.
