@@ -57,3 +57,5 @@ Everything that could go into Codebase City, ordered from most to least importan
 - Support folders that aren't Git repositories
 - Hosted demo with sample repositories
 - Hosted analysis (stretch goal)
+- Replace the Vite Starter files
+- Move backend tests into their own folder
