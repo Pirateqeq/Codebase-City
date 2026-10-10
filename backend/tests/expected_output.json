@@ -1,0 +1,28 @@
+{
+    "buildings": [
+        { 
+            "path": ".gitignore",
+            "metrics": { "lines": 1 }
+        },
+        {
+            "path": "README.md",
+            "metrics": { "lines": 3 }
+        },
+        { 
+            "path": "notes.txt",
+            "metrics": { "lines": 2 }
+        },
+        {
+            "path": "src/empty.py",
+            "metrics": { "lines": 0 }   
+        },
+        {
+            "path": "src/main.py",
+            "metrics": { "lines": 5}
+        },
+        {
+            "path": "windows.txt",
+            "metrics": { "lines": 2 }
+        }
+    ]
+}
