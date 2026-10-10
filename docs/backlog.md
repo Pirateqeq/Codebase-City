@@ -29,6 +29,7 @@ Everything that could go into Codebase City, ordered from most to least importan
    - Only files in the latest commit are included; ignored, untracked, and staged but uncommitted files are left out
    - Lines are counted the way an editor shows them: a last line without a newline still counts, an empty file is 0, and `\r\n` counts the same as `\n`
    - Takes the repo path and the output file path as inputs, and saves a JSON file that uses the contract's field names (`buildings`, `path`, `metrics.lines`)
+   - `buildings` is sorted by `path`, case-sensitive, by character code, using paths as Git stores them
    - A missing path or a folder that isn't a Git repo gives a clear error and writes no file; a repo with no commits gives an empty `buildings` list
    - *A local path for now; GitHub URLs come with the repo fetcher story.*
 
@@ -58,7 +59,6 @@ Everything that could go into Codebase City, ordered from most to least importan
 - Hosted demo with sample repositories
 - Hosted analysis (stretch goal)
 - Replace the Vite Starter files
-- Move backend tests into their own folder
 
 ## Done
 

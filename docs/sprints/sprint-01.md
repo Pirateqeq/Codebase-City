@@ -27,6 +27,7 @@
     - Only files in the latest commit are included; the table shows what is left out
     - Lines are counted the way an editor shows them: a last line without a newline still counts, an empty file is 0, and `\r\n` counts the same as `\n`
     - Takes the repo path and the output file path as inputs, and saves a JSON file that uses the contract's field names (`buildings`, `path`, `metrics.lines`)
+    - `buildings` is sorted by `path`, case-sensitive, by character code, using paths as Git stores them
     - A missing path or a folder that isn't a Git repo gives a clear error and writes no file
     - A repo with no commits gives an empty `buildings` list
     - A local path for now; GitHub URLs come with the repo fetcher story

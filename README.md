@@ -197,6 +197,8 @@ GET  /api/analyses/a1b2 → { "status": "queued | cloning | analyzing | done | f
 
 **Get city data**
 
+*Buildings will be sorted by path, case-sensitive, by character code, using paths as Git stores them.*
+
 ```json
 GET /api/analyses/a1b2/city
 {
