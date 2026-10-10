@@ -4,6 +4,7 @@ Everything that could go into Codebase City, ordered from most to least importan
 
 - **Ready:** detailed enough to pull into a sprint
 - **Rough:** an idea that gets detailed when it moves up
+- **Done:** finished stories, kept for the record
 
 ## Epics
 
@@ -22,16 +23,13 @@ Everything that could go into Codebase City, ordered from most to least importan
 
 ## Ready
 
-1. **[E1] Enabler:** Set up the project so code can be written and tested.
-   - The repo contains the README, `CLAUDE.md`, the agents, and `.gitignore`
-   - The backend virtual environment is set up and `pytest` runs
-   - The frontend Vite project runs in the browser
-
 2. **[E2]** As a user, I can point the analyzer at a repository on my computer and get every tracked file with its line count.
+   - A test helper builds a fixture repo in a temporary folder on each run, with known files, line counts, and 2 commits, including one ignored file, one untracked file, and one staged but uncommitted file (with a test proving its files, line counts, and commits)
    - Output exactly matches the fixture repo's known files and line counts
-   - A test helper creates a temporary Git repo with known files and commits (with a test proving its files, line counts, and commits)
-   - Ignored and untracked files are left out
-   - Output is saved as a JSON file
+   - Only files in the latest commit are included; ignored, untracked, and staged but uncommitted files are left out
+   - Lines are counted the way an editor shows them: a last line without a newline still counts, an empty file is 0, and `\r\n` counts the same as `\n`
+   - Takes the repo path and the output file path as inputs, and saves a JSON file that uses the contract's field names (`buildings`, `path`, `metrics.lines`)
+   - A missing path or a folder that isn't a Git repo gives a clear error and writes no file; a repo with no commits gives an empty `buildings` list
    - *A local path for now; GitHub URLs come with the repo fetcher story.*
 
 3. **[E6]** As a user, I can open a page and see each file as a 3D box.
@@ -49,6 +47,8 @@ Everything that could go into Codebase City, ordered from most to least importan
 9. **[E2]** As a user, I can paste a GitHub URL and the repo is cloned locally.
 10. **[E7]** As a user, I can start an analysis from the Home page and see its progress.
 11. **[E4]** As a user, I can see files grouped into districts by folder.
+12. **[E2]** Binary files are handled correctly by the analyzer (skipped or counted, to be decided).
+13. **[E2]** Committed files with uncommitted edits are analyzed as they are in the latest commit, with a test.
 
 ## Later
 
@@ -59,3 +59,7 @@ Everything that could go into Codebase City, ordered from most to least importan
 - Hosted analysis (stretch goal)
 - Replace the Vite Starter files
 - Move backend tests into their own folder
+
+## Done
+
+1. **[E1] Enabler:** Set up the project so code can be written and tested. *(Sprint 1)*

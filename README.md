@@ -118,7 +118,7 @@ cd Codebase-City
 ```bash
 cd backend
 python -m venv .venv
-.venv\Scripts\activate.bat             # Activate virtual enviorment
+.venv\Scripts\activate.bat             # Windows
 pip install -r requirements.txt
 ```
 
@@ -239,7 +239,16 @@ GET /api/analyses/a1b2/city
 
 > **Why:** You can only test correctness when you already know the right answer. Real projects show how it holds up at scale.
 
-*Specific repositories to be selected.*
+### Fixture repositories
+
+A test helper generates each fixture in a temporary folder on every run, so fixtures are never committed. The first one has tracked files with known line counts, plus an ignored file, an untracked file, and a staged but uncommitted file that must all be left out. The expected output lives in the tests.
+
+### Analysis rules
+
+- **Tracked file:** a file in the latest commit. Its line count is read from that commit.
+- **Line count:** what an editor shows. A last line without a newline still counts, an empty file is 0, and `\r\n` counts the same as `\n`.
+
+*Real-world repositories to be selected.*
 
 ---
 
@@ -280,7 +289,7 @@ Every user story is checked against this list. It's Done only when every item is
 
 | Area | Requirement | Why |
 |---|---|---|
-| **Works** | Runs without errors on the fixture repositories *(to be selected)* | Proves it works on known data |
+| **Works** | Runs without errors on the fixture repositories | Proves it works on known data |
 | **Correctness** | New logic has tests, and they pass | Proves it's correct instead of assuming it |
 | **Correctness** | All existing tests still pass *(automated once CI is set up)* | New work can't break old work |
 | **Performance** | Stays smooth on the large test repository *(threshold to be set)* | A slow city ruins the experience |
