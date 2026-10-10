@@ -118,7 +118,7 @@ cd Codebase-City
 ```bash
 cd backend
 python -m venv .venv
-.venv\Scripts\activate.bat # Windows
+.venv\Scripts\activate.bat             # Activate virtual enviorment
 pip install -r requirements.txt
 ```
 
