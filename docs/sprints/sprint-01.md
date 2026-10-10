@@ -18,7 +18,7 @@
     - [✓] Confirm the Vite dev server loads in the browser with no console errors
     - [✓] Add one trivial passing test and confirm `cd frontend && npx vitest run` runs
     - [✓] Add a "Getting started" section to the README: how to install dependencies and run tests
-    - [ ] Commit after each task; at the end of the story, get the reviewer agent's review and explain check, then push to main
+    - [✓] Commit after each task; at the end of the story, get the reviewer agent's review and explain check, then push to main
 
 ## Daily log
 
