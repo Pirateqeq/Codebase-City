@@ -15,10 +15,11 @@ Codebase City turns a software repository into an interactive 3D city, so you ca
 3. [What It Does](#what-it-does)
 4. [Quality Attributes](#quality-attributes)
 5. [Tech Stack](#tech-stack)
-6. [Architecture](#architecture)
-7. [Testing](#testing)
-8. [Development Methodology](#development-methodology)
-9. [Team](#team)
+6. [Getting Started](#getting-started)
+7. [Architecture](#architecture)
+8. [Testing](#testing)
+9. [Development Methodology](#development-methodology)
+10. [Team](#team)
 
 ---
 
@@ -92,6 +93,57 @@ In priority order:
 | AI agents | Claude Code subagents | Agents live in the repo as files, and each one is limited to the tools it needs |
 | Git analysis | *To be decided* | |
 | Continuous integration | *To be decided* | |
+
+---
+
+## Getting Started
+
+*These instructions are written for Windows (Command Prompt).*
+
+### Requirements
+
+- Git
+- Python 3.14 or newer *(developed on 3.14.6)*
+- Node.js 24 or newer, with npm *(developed on 24.14.1)*
+
+### Install
+
+```bash
+git clone https://github.com/Pirateqeq/Codebase-City.git
+cd Codebase-City
+```
+
+**Backend**
+
+```bash
+cd backend
+python -m venv .venv
+.venv\Scripts\activate.bat # Windows
+pip install -r requirements.txt
+```
+
+**Frontend**
+
+```bash
+cd ../frontend
+npm install
+```
+
+### Run the tests
+
+```bash
+cd backend             # with the virtual environment active
+pytest
+cd ../frontend
+npx vitest run
+```
+
+### Run the front end
+
+```bash
+cd frontend
+npm run dev
+```
 
 ---
 
