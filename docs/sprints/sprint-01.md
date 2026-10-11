@@ -48,7 +48,7 @@
   - Tasks:
     - [x] 1. Write the expected output by hand from the fixture table
     - [x] 2. Decide the Git analysis approach and record it in the README
-    - [ ] 3. Build the test helper that creates the temporary Git repo
+    - [x] 3. Build the test helper that creates the temporary Git repo
     - [ ] 4. Test the helper's files, line counts, and commits
     - [ ] 5. Write a failing test: the analyzer's output matches the expected output
     - [ ] 6. Implement the scanner for files in the latest commit
