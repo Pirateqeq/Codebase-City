@@ -91,7 +91,7 @@ In priority order:
 | Testing | pytest and Vitest | The standard tools for Python and TypeScript |
 | Version control | Git + GitHub | Industry standard, and my portfolio is already there |
 | AI agents | Claude Code subagents | Agents live in the repo as files, and each one is limited to the tools it needs |
-| Git analysis | *To be decided* | |
+| Git analysis | pygit2 | Able to read data from commit itself, no git install, covers cloning and history |
 | Continuous integration | *To be decided* | |
 
 ---
