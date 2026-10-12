@@ -79,6 +79,13 @@
   - **Blockers:** Inexperience with fixtures and tests will slow things down. **Blocker (risk):** designing the Git analysis approach (task 2). It gates tasks 3-9 and is the main risk to the sprint goal.
   - **Suggested step:** Time-box the task 2 research (e.g. 45-60 min). List 2-3 options for reading files from the latest commit, compare them on the fixture's rules (latest commit only, `\r\n`, no final newline), pick one, and note why. Tasks 1, 3, 4, and 5 don't depend on the choice.
 
+### 2026-10-11
+- **Done:** Tasks 1-3, each committed: expected output (09a6c9a), approach chosen and recorded in the README Tech Stack table: pygit2 (bfab005), pytest fixture building the temp repo in `backend/tests/conftest.py` (9d4d40d). The buildings sorting rule was added to the README contract (d36175e). Backend tests pass.
+- **Unplanned work:** Moved `backend/test_example.py` into `backend/tests/`. This is the backlog "Move backend tests into their own folder" item, outside Story 2. Small and finished. Mark or remove that backlog item.
+- **Next:** Task 4.
+- **Blockers:** None. The task 2 risk is resolved.
+- **Unplanned work:** README cleanup (removed unnecessary lines), not tied to a Story 2 task. Small; not yet committed.
+
 ## Sprint review
 
 **Status:** Interim. The sprint continues with Story 2; a final review will be added at sprint end.

@@ -25,7 +25,7 @@ Codebase City turns a software repository into an interactive 3D city, so you ca
 
 ## Purpose
 
-Build a polished, finished tool that turns codebases into explorable 3D cities, and develop real software engineering skills along the way.
+Build a polished, finished tool that turns codebases into explorable 3D cities, and develop my skills along the way.
 
 ---
 
@@ -89,7 +89,7 @@ In priority order:
 | Backend | Python + FastAPI | Familiar, great at parsing data, and generates API docs automatically |
 | Database | SQLite locally, PostgreSQL hosted | SQLite needs no server; PostgreSQL handles many users |
 | Testing | pytest and Vitest | The standard tools for Python and TypeScript |
-| Version control | Git + GitHub | Industry standard, and my portfolio is already there |
+| Version control | Git + GitHub | Industry standard |
 | AI agents | Claude Code subagents | Agents live in the repo as files, and each one is limited to the tools it needs |
 | Git analysis | pygit2 | Able to read data from commit itself, no git install, covers cloning and history |
 | Continuous integration | *To be decided* | |
@@ -256,7 +256,7 @@ A test helper generates each fixture in a temporary folder on every run, so fixt
 
 ## Development Methodology
 
-This project uses **Scrum**: work happens in short, fixed-length **sprints**, and AI agents act as Scrum Master and Reviewer / Tester (see [Team](#team)).
+This project uses a Scrum framework and AI agents act as Scrum Master and Reviewer / Tester (see [Team](#team)).
 
 > **Why:** Every sprint has to end with working software, which keeps the project moving instead of stuck in planning.
 
@@ -272,8 +272,6 @@ Product Goal → Epics → User Stories → Tasks
 | **Epic** | A big chunk of work, too large for one sprint | "Repository analysis" |
 | **User Story** | A small, user-facing piece that fits in one sprint | "As a user, I can paste a repo URL and see its files listed." |
 | **Task** | One step toward finishing a story | "Clone the repository" |
-
-Epics and user stories aren't part of the official Scrum Guide; they're common add-ons.
 
 ### Sprints
 
