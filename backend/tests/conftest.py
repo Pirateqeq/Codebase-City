@@ -1,5 +1,5 @@
-import pytest
-import pygit2
+from pytest import fixture
+from pygit2 import init_repository, Signature, Repository, Commit
 
 FILES = (
     {
@@ -49,16 +49,21 @@ FILES = (
     }
 )
 
+@fixture
+def repo_files():
+    """The FILES table"""
+    return FILES
 
-@pytest.fixture
+
+@fixture
 def sample_repo(tmp_path):
-    """Fixture used to create temp repo using pygit2 in temp folder from pytest"""
+    """Build a temp repo with pygit2"""
     repo_path = tmp_path / "test_repo"
     repo_path.mkdir()
-    repo = pygit2.init_repository(str(repo_path))
+    repo = init_repository(str(repo_path))
     repo.config["core.autocrlf"] = False
     index = repo.index
-    sig = pygit2.Signature("Test", "text@example.com", 0, 0)
+    sig = Signature("Test", "text@example.com", 0, 0)
     
     def write_file(file):
         file_path = repo_path / file["path"]
@@ -69,7 +74,7 @@ def sample_repo(tmp_path):
         index.write()
         tree = index.write_tree()
         parents = [] if repo.head_is_unborn else [repo.head.target]
-        repo.create_commit("HEAD", sig, message, tree, parents)
+        repo.create_commit("HEAD", sig, sig, message, tree, parents)
     
     # Commits in order
     for state, message in ( ("commit1", "First commit"), ("commit2", "Second commit")):
@@ -91,5 +96,12 @@ def sample_repo(tmp_path):
         if file["state"] in {"untracked", "ignored"}:
             write_file(file)
             
-    return repo.path
+    repo.free()
+    reopened = Repository(str(repo_path))
+    yield reopened
+    reopened.free()
     
+@fixture
+def head_tree(sample_repo):
+    """The file tree of the commit HEAD oiubts to."""
+    return sample_repo.head.peel(Commit).tree
