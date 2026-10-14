@@ -50,7 +50,7 @@
     - [x] 2. Decide the Git analysis approach and record it in the README
     - [x] 3. Build the test helper that creates the temporary Git repo
     - [x] 4. Test the helper's files, line counts, and commits
-    - [ ] 5. Write a failing test: the analyzer's output matches the expected output
+    - [x] 5. Write a failing test: the analyzer's output matches the expected output
     - [ ] 6. Implement the scanner for files in the latest commit
     - [ ] 7. Count lines per file
     - [ ] 8. Save the output as a JSON file, with a test
@@ -85,6 +85,18 @@
 - **Next:** Task 4.
 - **Blockers:** None. The task 2 risk is resolved.
 - **Unplanned work:** README cleanup (removed unnecessary lines), not tied to a Story 2 task. Small; not yet committed.
+
+### 2026-10-12
+- **Done:** Task 4 committed (68c090d) and ticked (0eaaeb0). Tests cover the fixture's committed files, line counts, 2 commits, and the staged, untracked, and ignored states. Confirmed they fail when the helper breaks. Backend suite: 14 passed.
+
+### 2026-10-13
+- **Done:** No commits.
+
+### 2026-10-14
+- **Status:** 4 of 12 Story 2 tasks done; tasks 5-12 remain, 1 day left. **The sprint goal is at serious risk.**
+- **Plan:** Push on today and tomorrow, get as much done as possible, and see where it ends. Story 2 is picked up in a later sprint if not Done at the review.
+- **Blocker:** Task 5 (failing test) requires knowing what the analyzer is and what it outputs before it exists. **Next step (not code):** On paper, write the analyzer's interface from the acceptance criteria: its name, what it takes, and what it returns or writes. Then write the test against that.
+- **Notes:** Nothing specific stopped work on 10-13. The README cleanup was already committed (48088c4, 10-11).
 
 ## Sprint review
 

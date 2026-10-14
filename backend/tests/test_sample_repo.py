@@ -9,8 +9,8 @@ from json import load
 EXPECTED_OUTPUT_PATH = Path(__file__).resolve().parent / "expected_output.json"
 
 with open(EXPECTED_OUTPUT_PATH, encoding="utf-8") as file:
-    data = load(file)["buildings"]
-    EXPECTED_LINES = { building["path"]: building['metrics']['lines'] for building in data }
+    EXPECTED_OUTPUT = load(file)["buildings"]
+    EXPECTED_LINES = { building["path"]: building['metrics']['lines'] for building in EXPECTED_OUTPUT }
 
 def tree_paths(tree):
     """Every blob path in a tree"""
