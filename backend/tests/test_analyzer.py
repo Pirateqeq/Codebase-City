@@ -21,3 +21,8 @@ def test_analyzer_outputs_to_correct_directory(sample_repo, tmp_path):
     output_path = tmp_path / "test_repo.json"
     write_repo_data(data, output_path)
     assert output_path.is_file()
+    
+def test_analyzer_output_paths_in_order(sample_repo):
+    expected_paths = { "buildings": [path for path in EXPECTED_LINES.keys()] }
+    sample_path = Path(sample_repo.workdir)
+    assert analyze_repo(sample_path) == expected_paths

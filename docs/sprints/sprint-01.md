@@ -97,6 +97,12 @@
 - **Plan:** Push on today and tomorrow, get as much done as possible, and see where it ends. Story 2 is picked up in a later sprint if not Done at the review.
 - **Blocker:** Task 5 (failing test) requires knowing what the analyzer is and what it outputs before it exists. **Next step (not code):** On paper, write the analyzer's interface from the acceptance criteria: its name, what it takes, and what it returns or writes. Then write the test against that.
 - **Notes:** Nothing specific stopped work on 10-13. The README cleanup was already committed (48088c4, 10-11).
+- **Done (end of day):** Task 5 committed (78fdb53) and ticked. The analyzer is split into `analyze_repo(repo_path) -> dict` and `write_repo_data(data, output_path)`. Added `pytest.toml` so tests can import the analyzer. The two new analyzer tests fail on their assertions as intended; the other 14 pass. Working tree clean. Story 2: 5 of 12 tasks done.
+
+### 2026-10-15
+- **Status:** Last day of the sprint. Tasks 6-12 remain.
+- **Next:** Task 6, the scanner.
+- **Blockers:** None.
 
 ## Sprint review
 
