@@ -51,7 +51,7 @@
     - [x] 3. Build the test helper that creates the temporary Git repo
     - [x] 4. Test the helper's files, line counts, and commits
     - [x] 5. Write a failing test: the analyzer's output matches the expected output
-    - [ ] 6. Implement the scanner for files in the latest commit
+    - [x] 6. Implement the scanner for files in the latest commit
     - [ ] 7. Count lines per file
     - [ ] 8. Save the output as a JSON file, with a test
     - [ ] 9. Take the repo path and output path as inputs
