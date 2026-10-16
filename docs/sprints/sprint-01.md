@@ -103,29 +103,40 @@
 - **Status:** Last day of the sprint. Tasks 6-12 remain.
 - **Next:** Task 6, the scanner.
 - **Blockers:** None.
+- **Done (end of day):** Task 6 committed (af8c47e) and ticked (6d914d1). Tasks 7-12 not started when the sprint ended.
 
 ## Sprint review
 
-**Status:** Interim. The sprint continues with Story 2; a final review will be added at sprint end.
+**Sprint goal:** Not met. The analyzer does not yet output files with line counts.
 
-- **Done:** Story 1 (E1 Enabler).
-- **Not done / returned to backlog:** None.
-- **Velocity:** 1 story (8 tasks) in ~3 of ~21 hours. The capacity estimate was far too high for a setup story. Vite scaffolding and test setup were the slower tasks (inexperience with the tools). ~18 hours remain (~3 hours/day).
-- **Demo:** Not demoed (setup only). Risk is low now, but no real person has seen the project yet. Demo when Story 2 produces visible output.
+**Done**
+- Story 1 (E1 Enabler): met the Definition of Done.
+
+**Not done**
+- Story 2 (E2 analyzer): tasks 1-6 of 12 done and committed; tasks 7-12 not started. Backend tests: 15 passed, 2 failed. The 2 failures are the intended red tests for the full analyzer output and the JSON file, which need tasks 7-8. They are expected, not regressions.
+
+**Returned to backlog**
+- Story 2, with progress noted: fixture helper and its tests, expected output, pygit2 approach, analyzer interface (`analyze_repo`, `write_repo_data`), and the scanner for files in the latest commit. Remaining: line counting, JSON writing, inputs, bad-input handling, README Testing section, reviewer review and explain check.
+- Add it back to `docs/backlog.md` yourself.
+
+**Velocity**
+- Story 1: ~3 hours (Done). Story 2: ~15 hours for 6 of 12 tasks (Not done). Total ~18 of ~21 hours of capacity.
+- Story 2 averaged ~2.5 hours per task, and there were no commits on 10-13. Pulling it in after Story 1 was reasonable, but it was too big for the remaining time.
+
+**Demo**
+- The developer presented the project to other students (mainly the agents and the README). This was a presentation of the process, not a demo of working software. No one has seen the project running, the tests passing, or the scanner output.
 
 ## Retrospective
 
 **What worked**
-- Task lists kept the story complete and accurate.
-- The reviewer enforced the Definition of Done and checked the developer could explain the work.
-- The sprint file logs are a useful paper trail.
+- Sessions and sprint worked. Tasks were small enough to finish in a single 3-hour session.
 
 **What didn't**
-- Nothing significant. The explain check needed rework on Q2 and Q3 because of inexperience with Vitest.
-- The two should-fix items were not urgent but worthwhile.
+- No specific problem named. The developer would reconsider the time estimate for work like project setup (Story 1), which they understand better now.
 
 **One thing that changes next sprint**
-- Better judgement of timelines.
+- Reconsider the estimated time for work like project setup (Story 1).
+- Scrum Master suggestion (not the developer's): use this sprint's actuals as the baseline when planning, ~3 hours for Story 1 and ~2.5 hours per Story 2 task, and plan fewer stories than the capacity allows.
 
 **Definition of Done**
-- No change proposed. Open from the reviewer: the "Works" (fixture repositories), "Performance", and "Visual polish" rows have no clear yes/no checks yet. The developer edits the README.
+- No change suggested by these answers. Still open from the reviewer: the "Works" (fixture repositories), "Performance", and "Visual polish" rows have no clear yes/no checks yet. The developer edits the README.

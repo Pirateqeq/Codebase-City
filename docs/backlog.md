@@ -23,7 +23,7 @@ Everything that could go into Codebase City, ordered from most to least importan
 
 ## Ready
 
-2. **[E2]** As a user, I can point the analyzer at a repository on my computer and get every tracked file with its line count.
+2. **[E2]** As a user, I can point the analyzer at a repository on my computer and get every tracked file with its line count. (Tasks 1-6 Done, 7-12 Remaining)
    - A test helper builds a fixture repo in a temporary folder on each run, with known files, line counts, and 2 commits, including one ignored file, one untracked file, and one staged but uncommitted file (with a test proving its files, line counts, and commits)
    - Output exactly matches the fixture repo's known files and line counts
    - Only files in the latest commit are included; ignored, untracked, and staged but uncommitted files are left out
