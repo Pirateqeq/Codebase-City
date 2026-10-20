@@ -105,3 +105,22 @@ def sample_repo(tmp_path):
 def head_tree(sample_repo):
     """The file tree of the commit HEAD oiubts to."""
     return sample_repo.head.peel(Commit).tree
+
+@fixture
+def empty_repo(tmp_path):
+    """Build an empty repo with pygit2"""
+    repo_path = tmp_path / "empty_repo"
+    repo_path.mkdir()
+    repo = init_repository(str(repo_path))
+    repo.config["core.autocrlf"] = False
+    repo.free()
+    reopened = Repository(str(repo_path))
+    yield reopened
+    reopened.free()
+    
+@fixture
+def non_git_folder(tmp_path):
+    """Non git folder for error testing"""
+    folder = tmp_path / "non_repo_folder"
+    folder.mkdir()
+    yield folder

@@ -18,8 +18,8 @@
   - Tasks (1-6 were done in Sprint 01; the fixture table is in `docs/sprints/sprint-01.md`):
     - [x] 7. Count lines per file, and update `test_names_in_order` for dict-shaped buildings
     - [x] 8. Save the output as a JSON file, with a test
-    - [ ] 9. Take the repo path and output path as inputs
-    - [ ] 10. Handle bad input, with tests:
+    - [x] 9. Take the repo path and output path as inputs
+    - [x] 10. Handle bad input, with tests:
       - Missing path or not a Git repo: clear error, no file written
       - Repo with no commits: empty `buildings` list
     - [ ] 11. Update the README Testing section to describe the generated fixture

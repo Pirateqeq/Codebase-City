@@ -1,6 +1,7 @@
 from analyzer import analyze_repo, write_repo_data
 
-
+import pytest
+import pygit2
 from pathlib import Path
 from json import load
 
@@ -38,3 +39,24 @@ def test_analyzer_output_paths_in_order(sample_repo):
     resulting_buildings = analyze_repo(sample_path)["buildings"]
     resulting_paths = [building["path"] for building in resulting_buildings]
     assert resulting_paths == EXPECTED_PATHS
+    
+def test_analyzer_invalid_repo_path():
+    invalid_path = Path("invalid_repo_path")
+    with pytest.raises(pygit2.GitError):
+        analyze_repo(invalid_path)
+    
+def test_analyzer_non_git_folder(non_git_folder):
+    with pytest.raises(pygit2.GitError):
+        analyze_repo(non_git_folder) 
+        
+def test_analyzer_invalid_folder(sample_repo, tmp_path):
+    data = analyze_repo(Path(sample_repo.workdir))
+    invalid_output = tmp_path / "invalid_folder" / "file"
+    with pytest.raises(FileNotFoundError):
+        write_repo_data(data, invalid_output)
+    assert not invalid_output.is_file()
+    
+    
+def test_analyzer_return_empty_repo_list(empty_repo):
+    data = analyze_repo(Path(empty_repo.workdir))
+    assert len(data["buildings"]) == 0
