@@ -14,7 +14,6 @@ def write_repo_data(data: dict, output_path: Path) -> None:
     return
 
 # Reads git repo and creates the expected output in python dict to write to disk.
-
 def analyze_repo(repo_path: Path) -> dict:
     repo = Repository(repo_path)
     latest_tree = repo.head.peel(Commit).tree

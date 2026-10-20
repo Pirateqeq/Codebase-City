@@ -16,8 +16,8 @@
     - A missing path or a folder that isn't a Git repo gives a clear error and writes no file; a repo with no commits gives an empty `buildings` list
     - A local path for now; GitHub URLs come with the repo fetcher story
   - Tasks (1-6 were done in Sprint 01; the fixture table is in `docs/sprints/sprint-01.md`):
-    - [ ] 7. Count lines per file, and update `test_names_in_order` for dict-shaped buildings
-    - [ ] 8. Save the output as a JSON file, with a test
+    - [x] 7. Count lines per file, and update `test_names_in_order` for dict-shaped buildings
+    - [x] 8. Save the output as a JSON file, with a test
     - [ ] 9. Take the repo path and output path as inputs
     - [ ] 10. Handle bad input, with tests:
       - Missing path or not a Git repo: clear error, no file written
@@ -32,6 +32,13 @@
 - **Done:** Nothing yet.
 - **Next:** Task 7.
 - **Blocker:** Finding a neat way to count lines for different file types from blob bytes. **Next step (not code):** List the line-ending cases from the criteria (no final newline, empty file, `\r\n`) as a short table of input and expected count, and check any approach against it.
+
+### 2026-10-20
+- **Done:** Tasks 7 and 8.
+- **Next:** Tasks 9 and 10.
+- **Blocker:** None.
+- **Risk:** Task 10 (bad input) may take most of the available time. **Next step (not code):** List every bad-input case from the criteria (missing path, folder that isn't a Git repo, repo with no commits, no file written on error) as a short table of input and expected result, then order them by effort and start with the smallest.
+- **Flag:** Task 8's test only checks that the output file exists, not its contents. The criteria require output that exactly matches the known files and line counts.
 
 ## Sprint review
 
