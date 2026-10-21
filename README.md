@@ -249,7 +249,7 @@ Fixtures are defined in `conftest.py` and built in a temporary folder on every r
 |---|---|---|
 | `sample_repo` | 2 commits of tracked files with known line counts, plus an ignored file, an untracked file, and a staged but uncommitted file | Only files in the latest commit are included, with the right line counts |
 | `empty_repo` | A Git repository with no commits | The output has an empty `buildings` list |
-| `non_git_folder` | A plain folder that isn't a Git repository | The analyzer gives a clear error and writes no file |
+| `non_git_folder` | A plain folder that isn't a Git repository | The analyzer gives a clear error for a folder oustide any repo and writes no files |
 
 `sample_repo` writes each file as exact bytes with `core.autocrlf` turned off, so `\r\n` endings reach the commit unchanged. Its known answer is `expected_output.json`, and the tests compare the analyzer's output against it.
 
@@ -257,6 +257,7 @@ Fixtures are defined in `conftest.py` and built in a temporary folder on every r
 
 - **Tracked file:** a file in the latest commit. Its line count is read from that commit.
 - **Line count:** what an editor shows. A last line without a newline still counts, an empty file is 0, and `\r\n` counts the same as `\n`.
+- **Sub folders** A subfolder analyzes the whole enclosing repo, with paths relative to the repo root.
 - *Still to decide:* whether a lone `\r` (one not followed by `\n`) counts as a line break. It currently does.
 
 *Real-world repositories to be selected.*

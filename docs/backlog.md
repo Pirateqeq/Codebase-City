@@ -60,6 +60,7 @@ Everything that could go into Codebase City, ordered from most to least importan
 - Hosted analysis (stretch goal)
 - Replace the Vite Starter files
 - (Edge case) Files in UTF-16 counts /n as two bytes
+- Analyzer CLI tests
 
 ## Done
 

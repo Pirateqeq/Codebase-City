@@ -62,6 +62,20 @@ def test_analyzer_invalid_folder(sample_repo, tmp_path):
         write_repo_data(data, invalid_output)
     assert not invalid_output.is_file()
     
+def test_analyzer_subfolder_returns_same_buildings(sample_repo):
+    subfolder = Path(sample_repo.workdir) / "folder"
+    subfolder.mkdir()
+    resulting_file = analyze_repo(subfolder)
+    assert resulting_file == EXPECTED_FILE
+    
+    resulting_buildings = resulting_file["buildings"]
+    assert resulting_buildings == EXPECTED_BUILDINGS
+    
+    resulting_paths = [building["path"] for building in resulting_buildings]
+    assert resulting_paths == EXPECTED_PATHS
+    
+    resulting_line_count = [building["metrics"]["lines"] for building in resulting_buildings]
+    assert resulting_line_count == EXPECTED_LINES_COUNT
     
 def test_analyzer_return_empty_repo_list(empty_repo):
     data = analyze_repo(Path(empty_repo.workdir))

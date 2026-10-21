@@ -19,11 +19,13 @@ def write_repo_data(data: dict, output_path: Path) -> None:
 def analyze_repo(repo_path: Path) -> dict:
     repo = Repository(repo_path)
     if repo.head_is_unborn:
+        repo.free()
         return { "buildings": [] }
     latest_tree = repo.head.peel(Commit).tree
     
     buildings = []
     add_tree_entries(latest_tree, buildings)
+    repo.free()
     return { "buildings": buildings }
 
 def add_tree_entries(tree: Tree, buildings: list, current_path: Path = Path()):
@@ -33,7 +35,9 @@ def add_tree_entries(tree: Tree, buildings: list, current_path: Path = Path()):
             buildings.append( { "path": entry_path.as_posix(), "metrics": { "lines": len(entry.data.splitlines()) } } )
         elif entry.type_str == "tree":
             add_tree_entries(entry, buildings, entry_path)
-            
+
+# CLI documentaion will be ignored as it is not the main function of the analyzer.
+# Main use will be for API calls.
 if __name__ == "__main__":
     import argparse
     

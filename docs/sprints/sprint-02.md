@@ -17,7 +17,7 @@
     - A local path for now; GitHub URLs come with the repo fetcher story
   - Tasks (1-6 were done in Sprint 01; the fixture table is in `docs/sprints/sprint-01.md`):
     - [x] 7. Count lines per file, and update `test_names_in_order` for dict-shaped buildings
-    - [x] 8. Save the output as a JSON file, with a test
+    - [x] 8. Save the output as a JSON file, with a test (Saved file will not be read back. Output is verified by written json file.)
     - [x] 9. Take the repo path and output path as inputs
     - [x] 10. Handle bad input, with tests:
       - Missing path or not a Git repo: clear error, no file written
