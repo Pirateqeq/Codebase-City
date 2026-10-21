@@ -22,7 +22,7 @@
     - [x] 10. Handle bad input, with tests:
       - Missing path or not a Git repo: clear error, no file written
       - Repo with no commits: empty `buildings` list
-    - [ ] 11. Update the README Testing section to describe the generated fixture
+    - [x] 11. Update the README Testing section to describe the generated fixture
     - [ ] 12. Reviewer review and explain check, then push to main
   - Reminder: demo the working output to at least one real person once the JSON file exists.
 
