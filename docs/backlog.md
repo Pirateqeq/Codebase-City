@@ -23,16 +23,6 @@ Everything that could go into Codebase City, ordered from most to least importan
 
 ## Ready
 
-2. **[E2]** As a user, I can point the analyzer at a repository on my computer and get every tracked file with its line count. (Tasks 1-6 Done, 7-12 Remaining)
-   - A test helper builds a fixture repo in a temporary folder on each run, with known files, line counts, and 2 commits, including one ignored file, one untracked file, and one staged but uncommitted file (with a test proving its files, line counts, and commits)
-   - Output exactly matches the fixture repo's known files and line counts
-   - Only files in the latest commit are included; ignored, untracked, and staged but uncommitted files are left out
-   - Lines are counted the way an editor shows them: a last line without a newline still counts, an empty file is 0, and `\r\n` counts the same as `\n`
-   - Takes the repo path and the output file path as inputs, and saves a JSON file that uses the contract's field names (`buildings`, `path`, `metrics.lines`)
-   - `buildings` is sorted by `path`, case-sensitive, by character code, using paths as Git stores them
-   - A missing path or a folder that isn't a Git repo gives a clear error and writes no file; a repo with no commits gives an empty `buildings` list
-   - *A local path for now; GitHub URLs come with the repo fetcher story.*
-
 3. **[E6]** As a user, I can open a page and see each file as a 3D box.
    - One box per file in the JSON
    - Box size reflects line count *(temporary mapping until city mapping is designed)*
@@ -65,3 +55,5 @@ Everything that could go into Codebase City, ordered from most to least importan
 ## Done
 
 1. **[E1] Enabler:** Set up the project so code can be written and tested. *(Sprint 1)*
+
+2. **[E2]** As a user, I can point the analyzer at a repository on my computer and get every tracked file with its line count. *(Spring 2)*
