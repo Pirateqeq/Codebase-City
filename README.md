@@ -243,12 +243,21 @@ GET /api/analyses/a1b2/city
 
 ### Fixture repositories
 
-A test helper generates each fixture in a temporary folder on every run, so fixtures are never committed. The first one has tracked files with known line counts, plus an ignored file, an untracked file, and a staged but uncommitted file that must all be left out. The expected output lives in the tests.
+Fixtures are defined in `conftest.py` and built in a temporary folder on every run, so they're never committed.
+
+| Fixture | What it is | What it checks |
+|---|---|---|
+| `sample_repo` | 2 commits of tracked files with known line counts, plus an ignored file, an untracked file, and a staged but uncommitted file | Only files in the latest commit are included, with the right line counts |
+| `empty_repo` | A Git repository with no commits | The output has an empty `buildings` list |
+| `non_git_folder` | A plain folder that isn't a Git repository | The analyzer gives a clear error and writes no file |
+
+`sample_repo` writes each file as exact bytes with `core.autocrlf` turned off, so `\r\n` endings reach the commit unchanged. Its known answer is `expected_output.json`, and the tests compare the analyzer's output against it.
 
 ### Analysis rules
 
 - **Tracked file:** a file in the latest commit. Its line count is read from that commit.
 - **Line count:** what an editor shows. A last line without a newline still counts, an empty file is 0, and `\r\n` counts the same as `\n`.
+- *Still to decide:* whether a lone `\r` (one not followed by `\n`) counts as a line break. It currently does.
 
 *Real-world repositories to be selected.*
 

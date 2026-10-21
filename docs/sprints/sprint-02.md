@@ -40,6 +40,14 @@
 - **Risk:** Task 10 (bad input) may take most of the available time. **Next step (not code):** List every bad-input case from the criteria (missing path, folder that isn't a Git repo, repo with no commits, no file written on error) as a short table of input and expected result, then order them by effort and start with the smallest.
 - **Flag:** Task 8's test only checks that the output file exists, not its contents. The criteria require output that exactly matches the known files and line counts.
 
+### 2026-10-21
+- **Done:** Tasks 9 and 10.
+- **Next:** Tasks 11 and 12.
+- **Blocker:** None.
+- **Decision:** Developer considers task 8's test done, because the tests check the output's buildings, paths, and line counts.
+- **Flag:** No demo logged yet. Demo the working output to a real person before the sprint review.
+- **Flag:** Start task 12 by about 10-23 so review fixes fit before the sprint ends on 10-25.
+
 ## Sprint review
 
 ## Retrospective

@@ -48,6 +48,12 @@ def test_analyzer_invalid_repo_path():
 def test_analyzer_non_git_folder(non_git_folder):
     with pytest.raises(pygit2.GitError):
         analyze_repo(non_git_folder) 
+
+def test_analyzer_non_git_foler_no_output(non_git_folder, tmp_path):
+    with pytest.raises(pygit2.GitError):
+        file_path = tmp_path / "data.json"
+        write_repo_data(analyze_repo(non_git_folder), file_path)
+    assert not file_path.is_file()
         
 def test_analyzer_invalid_folder(sample_repo, tmp_path):
     data = analyze_repo(Path(sample_repo.workdir))
